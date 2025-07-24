@@ -17,7 +17,7 @@
                                     <div class="image-overlay">
                                         <div class="hover-icon">
                                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                                <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                                <path d="M8 5v14l11-7z" fill="currentColor" />
                                             </svg>
                                         </div>
                                     </div>
@@ -32,7 +32,9 @@
                                 <div class="back-content">
                                     <div class="music-note-icon">
                                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" fill="currentColor"/>
+                                            <path
+                                                d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
+                                                fill="currentColor" />
                                         </svg>
                                     </div>
                                     <h3 class="back-title">{{ item.title }}</h3>
@@ -40,7 +42,7 @@
                                     <div class="play-button">
                                         <span>立即播放</span>
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                            <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                            <path d="M8 5v14l11-7z" fill="currentColor" />
                                         </svg>
                                     </div>
                                 </div>
@@ -49,12 +51,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- 輪播控制 -->
             <div class="carousel-controls">
                 <button class="control-btn pause-btn" @click="toggleAnimation">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/>
+                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor" />
                     </svg>
                 </button>
                 <!-- <div class="speed-control">
@@ -159,8 +161,17 @@ function toggleAnimation() {
 }
 
 @keyframes shimmer {
-    0%, 100% { opacity: 0.6; transform: scaleX(1); }
-    50% { opacity: 1; transform: scaleX(1.2); }
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scaleX(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1.2);
+    }
 }
 
 /* 輪播容器 */
@@ -170,18 +181,21 @@ function toggleAnimation() {
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
-    padding: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 550px;
+    display: flex;
+    align-items: center; /* 垂直置中 */
 }
 
 /* 動畫輪播 */
 .animation {
     display: flex;
-    gap: 3%;
+    gap: 1%;
     width: 100%;
     animation: scroll 15s linear infinite;
     transition: animation-play-state 0.3s ease;
+    margin: auto;
 }
 
 .animation:hover {
@@ -189,14 +203,19 @@ function toggleAnimation() {
 }
 
 @keyframes scroll {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* 翻轉卡片 */
 .flip-card {
-    width: 280px;
-    height: 400px;
+    width: 19%;
+    height: 500px;
     flex-shrink: 0;
     perspective: 1000px;
     cursor: pointer;
@@ -205,7 +224,7 @@ function toggleAnimation() {
 .flip-card-inner {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 80%;
     transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
     transform-style: preserve-3d;
 }
@@ -219,7 +238,7 @@ function toggleAnimation() {
 .flip-card-back {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 80%;
     backface-visibility: hidden;
     border-radius: 16px;
     overflow: hidden;
@@ -230,6 +249,7 @@ function toggleAnimation() {
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
+    height: 100%;
 }
 
 .flip-card:hover .flip-card-front {
@@ -319,6 +339,7 @@ function toggleAnimation() {
     color: white;
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .flip-card-back::before {
@@ -346,8 +367,15 @@ function toggleAnimation() {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .back-title {
@@ -449,40 +477,40 @@ function toggleAnimation() {
         font-size: 2.2rem;
         letter-spacing: 2px;
     }
-    
+
     .carousel-container {
         padding: 20px;
     }
-    
+
     .flip-card {
         width: 220px;
         height: 320px;
     }
-    
+
     .image-container {
         height: 200px;
     }
-    
+
     .quick-info {
         padding: 15px;
     }
-    
+
     .song-title-preview {
         font-size: 1rem;
     }
-    
+
     .artist-preview {
         font-size: 0.9rem;
     }
-    
+
     .back-title {
         font-size: 1.2rem;
     }
-    
+
     .back-artist {
         font-size: 1rem;
     }
-    
+
     .carousel-controls {
         flex-direction: column;
         gap: 20px;
@@ -494,20 +522,20 @@ function toggleAnimation() {
     .carousel-wrapper {
         padding: 40px 0;
     }
-    
+
     .title-text {
         font-size: 1.8rem;
     }
-    
+
     .flip-card {
         width: 180px;
         height: 280px;
     }
-    
+
     .image-container {
         height: 160px;
     }
-    
+
     .animation {
         gap: 5%;
     }

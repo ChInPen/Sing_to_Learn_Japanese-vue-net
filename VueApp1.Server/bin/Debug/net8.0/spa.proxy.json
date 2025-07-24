@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:54497",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\Users\\azse8\\Desktop\\Vuesing\\VueApp1.Server\\..\\vueapp1.client",
+"WorkingDirectory": "C:\\Users\\azse8\\Desktop\\sing\\Sing_to_Learn_Japanese-vue-net\\VueApp1.Server\\..\\vueapp1.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
