@@ -4,7 +4,8 @@
         <div class="music-carousel">
             <button class="scroll-btn left" @click="scrollMusicList(-1)">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
             </button>
             <div class="music-scroller" ref="scrollerRef">
@@ -15,7 +16,7 @@
                             <div class="play-overlay">
                                 <div class="play-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                        <path d="M8 5v14l11-7z" fill="currentColor" />
                                     </svg>
                                 </div>
                             </div>
@@ -29,7 +30,8 @@
             </div>
             <button class="scroll-btn right" @click="scrollMusicList(1)">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
             </button>
         </div>
@@ -69,21 +71,14 @@ function scrollMusicList(direction) {
 <style scoped>
 /* 容器樣式 */
 .container {
-    max-width: 1400px;
+    max-width: 90%;
     margin: 0 auto;
-    padding: 40px 20px;
-    /* background: linear-gradient(135deg, #000000 0%, #000000 100%); */
-    min-height: 100vh;
+    padding: 0px 40px;
 }
 
 /* 主標題 */
 .main-title {
     font-size: 2.5rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 40px;
-    color: white;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     letter-spacing: 2px;
 }
 
@@ -289,42 +284,42 @@ function scrollMusicList(direction) {
     .container {
         padding: 20px 10px;
     }
-    
+
     .main-title {
         font-size: 2rem;
         margin-bottom: 30px;
     }
-    
+
     .music-carousel {
         padding: 20px;
     }
-    
+
     .music-scroller {
         grid-template-rows: auto;
         gap: 16px;
     }
-    
+
     .music-item {
         width: 320px;
     }
-    
+
     .scroll-btn {
         width: 48px;
         height: 48px;
     }
-    
+
     .scroll-btn.left {
         left: -24px;
     }
-    
+
     .scroll-btn.right {
         right: -24px;
     }
-    
+
     .info .title {
         font-size: 1.1rem;
     }
-    
+
     .info .artist {
         font-size: 1rem;
     }
@@ -334,24 +329,24 @@ function scrollMusicList(direction) {
     .music-item {
         width: 280px;
     }
-    
+
     .music-link {
         padding: 12px;
     }
-    
+
     .image-container {
         width: 70px;
         height: 70px;
     }
-    
+
     .info {
         padding-left: 15px;
     }
-    
+
     .info .title {
         font-size: 1rem;
     }
-    
+
     .info .artist {
         font-size: 0.9rem;
     }
