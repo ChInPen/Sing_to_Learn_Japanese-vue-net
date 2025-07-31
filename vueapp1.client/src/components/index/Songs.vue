@@ -14,13 +14,6 @@
                             <div class="flip-card-front">
                                 <div class="image-container">
                                     <img :src="item.img" :alt="item.title + ' 專輯封面'" />
-                                    <div class="image-overlay">
-                                        <div class="hover-icon">
-                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                                <path d="M8 5v14l11-7z" fill="currentColor" />
-                                            </svg>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="quick-info">
                                     <div class="song-title-preview">{{ item.title }}</div>
@@ -59,10 +52,6 @@
                         <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor" />
                     </svg>
                 </button>
-                <!-- <div class="speed-control">
-                    <span>速度</span>
-                    <input type="range" min="5" max="25" value="15" @input="changeSpeed" />
-                </div> -->
             </div>
         </div>
     </div>
@@ -96,19 +85,11 @@ function toggleAnimation() {
     }
 }
 
-// function changeSpeed(event) {
-//     const speed = event.target.value
-//     const element = document.getElementById('songCards')
-//     if (element) {
-//         element.style.animationDuration = `${speed}s`
-//     }
-// }
 </script>
 
 <style scoped>
 /* 整體容器 */
 .carousel-wrapper {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 60px 0;
     position: relative;
     overflow: hidden;
@@ -215,7 +196,7 @@ function toggleAnimation() {
 /* 翻轉卡片 */
 .flip-card {
     width: 19%;
-    height: 500px;
+    height: 400px ;
     flex-shrink: 0;
     perspective: 1000px;
     cursor: pointer;
@@ -224,7 +205,7 @@ function toggleAnimation() {
 .flip-card-inner {
     position: relative;
     width: 100%;
-    height: 80%;
+    height: 100%;
     transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
     transform-style: preserve-3d;
 }
@@ -238,7 +219,7 @@ function toggleAnimation() {
 .flip-card-back {
     position: absolute;
     width: 100%;
-    height: 80%;
+    height: 100%;
     backface-visibility: hidden;
     border-radius: 16px;
     overflow: hidden;
@@ -274,40 +255,6 @@ function toggleAnimation() {
     transform: scale(1.1);
 }
 
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.flip-card:hover .image-overlay {
-    opacity: 1;
-}
-
-.hover-icon {
-    width: 64px;
-    height: 64px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-}
-
-.flip-card:hover .hover-icon {
-    transform: scale(1);
-}
 
 .quick-info {
     padding: 20px;
@@ -443,34 +390,6 @@ function toggleAnimation() {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
-
-/* .speed-control {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: white;
-    font-weight: 500;
-}
-
-.speed-control input[type="range"] {
-    width: 120px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 2px;
-    outline: none;
-    -webkit-appearance: none;
-}
-
-.speed-control input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-} */
-
 /* 響應式設計 */
 @media (max-width: 768px) {
     .title-text {

@@ -13,6 +13,7 @@ html, body {
   max-width: 100%;
   overflow-x: hidden; 
   box-sizing: border-box;
+  background: linear-gradient(135deg, #101010 0%, #a5a5a5 100%);
 }
 
 
@@ -27,7 +28,7 @@ header {
 }
 
 main {
-  flex: 1; /* 讓 main 撐開中間區域 */
+  flex: 1;
   width: 100%;
 }
 

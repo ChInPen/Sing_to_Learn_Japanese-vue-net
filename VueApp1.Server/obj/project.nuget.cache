@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9gl5UT1Fjg0=",
+  "dgSpecHash": "6bm++ELPgME=",
   "success": true,
-  "projectFilePath": "C:\\Users\\azse8\\Desktop\\sing\\Sing_to_Learn_Japanese-vue-net\\VueApp1.Server\\VueApp1.Server.csproj",
+  "projectFilePath": "C:\\Users\\azse8\\Desktop\\Sing\\VueApp1.Server\\VueApp1.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\azse8\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.18\\microsoft.aspnetcore.spaproxy.8.0.18.nupkg.sha512",
     "C:\\Users\\azse8\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

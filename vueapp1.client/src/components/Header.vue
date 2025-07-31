@@ -67,8 +67,8 @@
 
 <script setup>
 import { ref } from 'vue'
-import PopupNotice from '../Modal/PopupNotice.vue'
-import LoginModal from '../Modal/LoginModal.vue'
+import PopupNotice from './Modal/PopupNotice.vue'
+import LoginModal from './Modal/LoginModal.vue'
 
 const showJapanese = ref(false)
 const showNotice = ref(false)
@@ -103,7 +103,7 @@ function toggleMobileMenu() {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(53, 52, 52, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }

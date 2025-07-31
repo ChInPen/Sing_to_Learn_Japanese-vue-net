@@ -484,11 +484,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\azse8\\Desktop\\sing\\Sing_to_Learn_Japanese-vue-net\\VueApp1.Server\\VueApp1.Server.csproj",
+      "projectUniqueName": "C:\\Users\\azse8\\Desktop\\Sing\\VueApp1.Server\\VueApp1.Server.csproj",
       "projectName": "VueApp1.Server",
-      "projectPath": "C:\\Users\\azse8\\Desktop\\sing\\Sing_to_Learn_Japanese-vue-net\\VueApp1.Server\\VueApp1.Server.csproj",
+      "projectPath": "C:\\Users\\azse8\\Desktop\\Sing\\VueApp1.Server\\VueApp1.Server.csproj",
       "packagesPath": "C:\\Users\\azse8\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\azse8\\Desktop\\sing\\Sing_to_Learn_Japanese-vue-net\\VueApp1.Server\\obj\\",
+      "outputPath": "C:\\Users\\azse8\\Desktop\\Sing\\VueApp1.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
