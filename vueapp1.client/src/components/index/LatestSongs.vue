@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <h1 class="main-title">最新歌曲</h1>
+        <h1 class="songs-title">
+            <span class="title-text">最新歌曲</span>
+            <div class="title-underline"></div>
+        </h1>
         <div class="music-carousel">
             <button class="scroll-btn left" @click="scrollMusicList(-1)">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -77,9 +80,22 @@ function scrollMusicList(direction) {
 }
 
 /* 主標題 */
-.main-title {
+/* 標題樣式 */
+.songs-title {
+    position: relative;
+}
+
+.title-text {
     font-size: 2.5rem;
     letter-spacing: 2px;
+}
+
+.title-underline {
+    width: 180px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    border-radius: 2px;
+    animation: shimmer 2s ease-in-out infinite;
 }
 
 /* 音樂輪播容器 */
@@ -285,7 +301,7 @@ function scrollMusicList(direction) {
         padding: 20px 10px;
     }
 
-    .main-title {
+    .title-text {
         font-size: 2rem;
         margin-bottom: 30px;
     }

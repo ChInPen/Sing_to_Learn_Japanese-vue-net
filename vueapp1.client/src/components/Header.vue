@@ -5,12 +5,10 @@
       <div class="custom-container">
         <!-- 左側Logo -->
         <a class="logo-link" href="/Sing_to_Learn_Japanese/index.html">
-          <div class="logo-container">
-            <img src="/images/icon/logo.png" class="logo-img" alt="網站Logo" />
-            <span class="logo-text">日語音樂學習</span>
-          </div>
+          <img src="/images/icon/logo.png" class="logo-img" alt="網站Logo" />
+          <span>唱歌學日語</span>
         </a>
-        
+
         <!-- 漢堡選單按鈕 (手機版) -->
         <button class="mobile-menu-btn" @click="toggleMobileMenu" :class="{ active: showMobileMenu }">
           <span></span>
@@ -23,9 +21,9 @@
           <ul class="menu-left">
             <li class="nav-item">
               <span class="navText" @click.prevent="toggleJapanese">
-                <i class="fas fa-book-open nav-icon"></i>
+                <i class="nav-icon"></i>
                 <span class="nav-label">日語學習</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                <i class="dropdown-arrow"></i>
               </span>
               <PopupNotice :visible="showJapanese" @close="showJapanese = false">
                 <h1>敬請期待！</h1>
@@ -33,9 +31,9 @@
             </li>
             <li class="nav-item">
               <span class="navText" @click.prevent="toggleNotice">
-                <i class="fas fa-comment nav-icon"></i>
+                <i class="nav-icon"></i>
                 <span class="nav-label">訊息公告</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                <i class="dropdown-arrow"></i>
               </span>
               <PopupNotice :visible="showNotice" @close="showNotice = false">
                 <h1>目前歌曲還在陸續更新中</h1>
@@ -43,17 +41,15 @@
                 <h1>感謝各位的配合！</h1>
               </PopupNotice>
             </li>
-          </ul>
-          <ul class="menu-right">
             <li class="nav-item">
               <a class="navText" href="./messages.html">
-                <i class="fa-solid fa-question nav-icon"></i>
+                <i class="nav-icon"></i>
                 <span class="nav-label">錯誤回報</span>
               </a>
             </li>
             <li class="nav-item">
               <span class="navText login-btn" @click.prevent="openLoginModal">
-                <i class="fa-solid fa-user nav-icon"></i>
+                <i class="nav-icon"></i>
                 <span class="nav-label">登入</span>
               </span>
             </li>
@@ -103,9 +99,9 @@ function toggleMobileMenu() {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(53, 52, 52, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 /* 導航欄主體 */
@@ -120,7 +116,7 @@ function toggleMobileMenu() {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 16px 24px;
   position: relative;
@@ -128,40 +124,22 @@ function toggleMobileMenu() {
 
 /* Logo 區域 */
 .logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   transition: transform 0.3s ease;
+  border-radius: 80px;
+  transition: box-shadow 0.3s ease;
+  color: #fff;
 }
-
 .logo-link:hover {
   transform: scale(1.05);
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-img {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-
-.logo-img:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
 
-.logo-text {
-  font-size: 1.4rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  white-space: nowrap;
+}
+.logo-img {
+  width: 60px;
 }
 
 /* 漢堡選單按鈕 */
@@ -213,8 +191,7 @@ function toggleMobileMenu() {
   flex-wrap: nowrap;
 }
 
-.menu-left,
-.menu-right {
+.menu-left {
   display: flex;
   list-style: none;
   padding: 0;
@@ -229,19 +206,21 @@ function toggleMobileMenu() {
 
 .navText {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  color: #374151;
+  gap: 10px;
+  color: #ffffff;
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 30px;
   transition: all 0.3s ease;
   white-space: nowrap;
   position: relative;
   overflow: hidden;
+  width: 100px;
+  height: 30px;
 }
 
 .navText::before {
@@ -289,25 +268,18 @@ function toggleMobileMenu() {
 
 /* 登入按鈕特殊樣式 */
 .login-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  background-color: white;
+  color: rgb(0, 0, 0);
 }
 
 .login-btn:hover {
-  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
 }
 
 /* 響應式設計 */
 @media (max-width: 768px) {
   .custom-container {
     padding: 12px 16px;
-  }
-
-  .logo-text {
-    display: none;
   }
 
   .mobile-menu-btn {
@@ -339,18 +311,12 @@ function toggleMobileMenu() {
     visibility: visible;
   }
 
-  .menu-left,
-  .menu-right {
+  .menu-left {
     flex-direction: column;
     width: 100%;
     gap: 8px;
   }
 
-  .menu-right {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-  }
 
   .navText {
     justify-content: flex-start;
@@ -396,6 +362,7 @@ function toggleMobileMenu() {
     transform: translateX(-10px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -406,10 +373,21 @@ function toggleMobileMenu() {
   animation: slideIn 0.3s ease forwards;
 }
 
-.nav-item:nth-child(1) { animation-delay: 0.1s; }
-.nav-item:nth-child(2) { animation-delay: 0.2s; }
-.nav-item:nth-child(3) { animation-delay: 0.3s; }
-.nav-item:nth-child(4) { animation-delay: 0.4s; }
+.nav-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 /* 滾動時的樣式變化 */
 .header-wrapper.scrolled {
