@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6bm++ELPgME=",
+  "dgSpecHash": "9gl5UT1Fjg0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\azse8\\Desktop\\Sing\\VueApp1.Server\\VueApp1.Server.csproj",
+  "projectFilePath": "C:\\Users\\azse8\\Desktop\\sing\\Sing_to_Learn_Japanese-vue-net\\VueApp1.Server\\VueApp1.Server.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\azse8\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.18\\microsoft.aspnetcore.spaproxy.8.0.18.nupkg.sha512",
+    "C:\\Users\\azse8\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.19\\microsoft.aspnetcore.spaproxy.8.0.19.nupkg.sha512",
     "C:\\Users\\azse8\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\azse8\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\azse8\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",

@@ -7,8 +7,8 @@
           <img :src="item.img" alt="item.title">
         </div>
         <div>
-          <span>{{ item.title }}</span>
-          <span>{{ item.artist }}</span>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.artist }}</p>
         </div>
       </div>
     </div>
@@ -38,14 +38,36 @@ const moreSongs = [
 }
 
 .card-container {
-  display: flex;
+  display: grid;
+  gap: 16px;
   border: 2px seashell solid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+}
+
+.image-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  background: #f3f3f3;
 }
 
 .image-container img {
-  width: 100px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.card{
-  width: 1000px;
+
+.card {
+  background-color: rgb(112, 79, 79);
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 40px;
+  
 }
 </style>

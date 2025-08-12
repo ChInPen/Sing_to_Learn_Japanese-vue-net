@@ -132,6 +132,7 @@ function toggleMobileMenu() {
   border-radius: 80px;
   transition: box-shadow 0.3s ease;
   color: #fff;
+  font-size: 1.8rem;
 }
 .logo-link:hover {
   transform: scale(1.05);
