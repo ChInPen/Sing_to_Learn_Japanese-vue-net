@@ -1,17 +1,17 @@
 <template>
   <div class="container">
     <h1>更多歌曲</h1>
-    <div class="card-container">
-      <div class="card" v-for="(item, index) in moreSongs" :key="index">
-        <div class="image-container">
-          <img :src="item.img" alt="item.title">
-        </div>
-        <div>
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.artist }}</p>
+      <div class="card-container">
+        <div class="card" v-for="(item, index) in moreSongs" :key="index">
+          <div class="image-container">
+            <img :src="item.img" alt="item.title">
+          </div>
+          <div>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.artist }}</p>
+          </div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 <script setup>
@@ -41,16 +41,16 @@ const moreSongs = [
   display: grid;
   gap: 16px;
   border: 2px seashell solid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   align-items: start;
 }
 
 .image-container {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
-  background: #f3f3f3;
+  margin-top: 20px
 }
 
 .image-container img {
@@ -58,16 +58,34 @@ const moreSongs = [
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
 }
 
 .card {
-  background-color: rgb(112, 79, 79);
+  background-color: rgba(0, 0, 0, 0.664);
   width: 100%;
   height: 100%;
   justify-items: center;
   text-align: center;
-  padding-top: 10px;
   border-radius: 40px;
-  
+}
+
+/* 音樂連結 */
+.music-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.music-link:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
 }
 </style>
