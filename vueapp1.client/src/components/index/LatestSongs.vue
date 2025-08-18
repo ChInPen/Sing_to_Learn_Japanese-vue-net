@@ -4,6 +4,7 @@
             <span class="title-text">最新歌曲</span>
             <div class="title-underline"></div>
         </h1>
+
         <div class="music-carousel">
             <button class="scroll-btn left" @click="scrollMusicList(-1)">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -11,9 +12,10 @@
                         stroke-linejoin="round" />
                 </svg>
             </button>
+
             <div class="music-scroller" ref="scrollerRef">
                 <div class="music-item" v-for="(item, index) in hotSongs" :key="index">
-                    <a :href="item.link" class="music-link">
+                    <RouterLink v-if="item.id" class="music-link" :to="{ name: 'song', params: { id: item.id } }">
                         <div class="image-container">
                             <img :src="item.img" :alt="item.title + ' 專輯封面'">
                             <div class="play-overlay">
@@ -28,7 +30,17 @@
                             <div class="title">{{ item.title }}</div>
                             <div class="artist">{{ item.artist }}</div>
                         </div>
-                    </a>
+                    </RouterLink>
+
+                    <span v-else class="music-link" style="cursor: not-allowed; opacity:.7;">
+                        <div class="image-container">
+                            <img :src="item.img" :alt="item.title + ' 專輯封面'">
+                        </div>
+                        <div class="info">
+                            <div class="title">{{ item.title }}</div>
+                            <div class="artist">{{ item.artist }}</div>
+                        </div>
+                    </span>
                 </div>
             </div>
             <button class="scroll-btn right" @click="scrollMusicList(1)">
@@ -43,31 +55,27 @@
 
 <script setup>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 
-// 最新歌曲重複區塊
+// 最新歌曲（把原本 link 改為 id；有做好的頁面就填 id，還沒做就先留空）
 const hotSongs = [
-    { title: "Bling-Bang-Bang-Born", artist: "Creepy Nuts", img: "/images/music/Creepy Nuts-Bling-Bang-Bang-Born.jpg", link: "#" },
-    { title: "前前前世", artist: "RADWIMPS", img: "/images/music/RADWIMPS-前前前世.jpg", link: "#" },
-    { title: "Lemon", artist: "米津玄師", img: "/images/music/米津玄師-Lemon.jpg", link: "#" },
-    { title: "Pretender", artist: "Official髭男dism", img: "/images/music/Official髭男dism-Pretender.jpg", link: "./Pretender.html" },
-    { title: "Idol", artist: "Yoasobi", img: "/images/music/Yoasobi-Idol.png", link: "#" },
-    { title: "灰色と青", artist: "米津玄師", img: "/images/music/米津玄師-灰色と青.jpg", link: "#" },
-    { title: "晚餐歌", artist: "tuki", img: "/images/music/tuki-晚餐歌.jpg", link: "./晚餐歌.html" },
-    { title: "はいよろこんで", artist: "Kocchi no Kento", img: "/images/music/Kocchi no Kento-はいよろこんで.jpg", link: "#" },
-    { title: "怪物", artist: "Yoasobi", img: "/images/music/Yoasobi-怪物.jpg", link: "./怪物.html" },
-    { title: "愛の賞味期限", artist: "tuki", img: "/images/music/tuki-愛の賞味期限.jpg", link: "#" }
+    { id: 'bling-bang-bang-born', title: "Bling-Bang-Bang-Born", artist: "Creepy Nuts", img: "/images/music/Creepy Nuts-Bling-Bang-Bang-Born.jpg" },
+    { id: 'zenszenzense', title: "前前前世", artist: "RADWIMPS", img: "/images/music/RADWIMPS-前前前世.jpg" },
+    { id: 'lemon', title: "Lemon", artist: "米津玄師", img: "/images/music/米津玄師-Lemon.jpg" },
+    { id: 'pretender', title: "Pretender", artist: "Official髭男dism", img: "/images/music/Official髭男dism-Pretender.jpg" },
+    { id: 'idol', title: "Idol", artist: "Yoasobi", img: "/images/music/Yoasobi-Idol.png" },
+    { id: '灰色と青', title: "灰色と青", artist: "米津玄師", img: "/images/music/米津玄師-灰色と青.jpg" },
+    { id: '晚餐歌', title: "晚餐歌", artist: "tuki", img: "/images/music/tuki-晚餐歌.jpg" },
+    { id: 'はいよろこんで', title: "はいよろこんで", artist: "Kocchi no Kento", img: "/images/music/Kocchi no Kento-はいよろこんで.jpg" },
+    { id: '怪物', title: "怪物", artist: "Yoasobi", img: "/images/music/Yoasobi-怪物.jpg" },
+    { id: '愛の賞味期限', title: "愛の賞味期限", artist: "tuki", img: "/images/music/tuki-愛の賞味期限.jpg" }
 ]
 
-// 熱播歌曲按鈕(螢幕滑動)
-const scrollerRef = ref()
+// 滑動
+const scrollerRef = ref(null)
 function scrollMusicList(direction) {
     const scrollAmount = 320
-    if (scrollerRef.value) {
-        scrollerRef.value.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
-        })
-    }
+    scrollerRef.value?.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' })
 }
 </script>
 
@@ -79,7 +87,6 @@ function scrollMusicList(direction) {
     padding: 0px 40px;
 }
 
-/* 主標題 */
 /* 標題樣式 */
 .songs-title {
     position: relative;
@@ -88,6 +95,29 @@ function scrollMusicList(direction) {
 .title-text {
     font-size: 2.5rem;
     letter-spacing: 2px;
+    color: white;
+}
+
+.title-underline {
+    width: 180px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    border-radius: 2px;
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scaleX(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1.2);
+    }
 }
 
 .title-underline {
@@ -101,12 +131,10 @@ function scrollMusicList(direction) {
 /* 音樂輪播容器 */
 .music-carousel {
     position: relative;
-    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     border-radius: 24px;
     padding: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* 滾動容器 */

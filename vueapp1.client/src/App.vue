@@ -1,17 +1,21 @@
 <template>
-  <Index />
+  <Header />
+  <router-view />
+  <Footer />
 </template>
 
 <script setup>
-import Index from './components/index/Index.vue';
+import Header from "./components/Modal/Header.vue";
+import Footer from "./components/Modal/Footer.vue";
 </script>
 <style>
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   box-sizing: border-box;
   background: #000000;
 }
